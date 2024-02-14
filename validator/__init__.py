@@ -1,3 +1,2 @@
-from .main import RegexMatch
-
-__all__ = ["RegexMatch"]
+from .main import WebSanitization
+__all__ = ["WebSanitization"]
