@@ -1,16 +1,16 @@
 [project]
 name = "web_sanitization"
 version = "0.0.0"
-description = "Scans LLM outputs for strings that could cause browser script execution downstream"
+description = "Scans LLM outputs for strings to prevent downstream browser script execution"
 authors = [
     {name = "Guardrails AI", email = "contact@guardrailsai.com"}
 ]
 license = {file = "LICENSE"}
 readme = "README.md"
-requires-python = ">= 3.8"
+requires-python = ">= 3.8.1"
 dependencies = [
-    "bleach",
-    "guardrails-ai>=0.3.2"
+    "guardrails-ai>=0.4.0",
+    "bleach", 
 ]
 
 [project.optional-dependencies]

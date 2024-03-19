@@ -1,6 +1,6 @@
-import bleach
 from typing import Any, Callable, Dict, Optional
 
+import bleach
 from guardrails.validator_base import (
     FailResult,
     PassResult,
@@ -8,6 +8,7 @@ from guardrails.validator_base import (
     Validator,
     register_validator,
 )
+
 
 @register_validator(name="guardrails/web_sanitization", data_type="string")
 class WebSanitization(Validator):
@@ -30,7 +31,7 @@ class WebSanitization(Validator):
 
     def validate(self, value: Any, metadata: Dict) -> ValidationResult:
         clean_output = bleach.clean(value)
-        if (clean_output != value):
+        if clean_output != value:
             return FailResult(
                 error_message="The output contains a web injection attack.",
                 fix_value=clean_output,
@@ -38,4 +39,6 @@ class WebSanitization(Validator):
         return PassResult()
 
     def to_prompt(self, with_keywords: bool = True) -> str:
-        return "Results should not contain any browser-executable code or code fragments."
+        return (
+            "Results should not contain any browser-executable code or code fragments."
+        )
