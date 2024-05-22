@@ -24,7 +24,7 @@ Use this validator when you are passing the results of your LLM requests directl
 ## Installation
 
 ```bash
-$guardrails hub install hub://guardrails/web_sanitization
+$ guardrails hub install hub://guardrails/web_sanitization
 ```
 
 ## Usage Examples
