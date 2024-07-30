@@ -1,10 +1,9 @@
 # Overview
 
 | Developed by | Guardrails AI |
-| --- | --- |
 | Date of development | Feb 15, 2024 |
 | Validator type | Format |
-| Blog | - |
+| Blog |  |
 | License | Apache 2 |
 | Input/Output | Output |
 
@@ -12,17 +11,20 @@
 
 Scans LLM outputs for strings that could cause browser script execution downstream. Uses the `bleach` library to detect and escape suspect characters.
 
-### (Optional) Intended Use
+### Intended Use
 
 Use this validator when you are passing the results of your LLM requests directly to a browser or other html-executable environment. It's a good idea to also implement other XSS and code injection prevention techniques.
 
-## Requirements
-* `bleach`
+### Requirements
+
+* Dependencies:
+    - `bleach`
+    - guardrails-ai>=0.4.0
 
 ## Installation
 
 ```bash
-guardrails hub install hub://guardrails/web_sanitization
+$ guardrails hub install hub://guardrails/web_sanitization
 ```
 
 ## Usage Examples
@@ -75,7 +77,7 @@ Initializes a new instance of the WebSanitization validator class.
 
 <br>
 
-**`__call__(self, value, metadata={}) → ValidationResult`**
+**`validate(self, value, metadata={}) -> ValidationResult`**
 
 <ul>
 
