@@ -75,7 +75,7 @@ Initializes a new instance of the WebSanitization validator class.
 
 </ul>
 
-<br>
+<br/>
 
 **`validate(self, value, metadata={}) -> ValidationResult`**
 
